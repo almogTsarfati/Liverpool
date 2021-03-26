@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Liverpool</title>
+</head>
+<body>
+    {% for post in posts %}
+    <h1>{{ post.fullname }}</h1>
+    <p>rank: {{ post.rank }}</p>
+    {% endfor %}
+</body>
+</html>

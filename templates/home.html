@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Liverpool</title>
+</head>
+<body>
+
+    <form action="{{ url_for('players') }}">
+        <input type="submit" value="players">
+    </form>
+
+    <form action="{{ url_for('add') }}" method="post">
+        <label for="name">Full name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="rank">Legend Rank:</label><br>
+        <input type="text" id="rank" name="rank"><br>
+        <input type="submit">
+    </form>
+
+</body>
+</html>
+
+
