@@ -47,9 +47,7 @@ def add():
     new_player = Player(fullname=request.form['name'], rank=request.form['rank'])
     db.session.add(new_player)
     db.session.commit()
-    # new_player = {"name": request.form['name'], 'rank': request.form['rank'], 'id': request.form['id']}
     print(Player.query.all())
-    # posts.append(new_player)
     return redirect(url_for('home'))
 
 
