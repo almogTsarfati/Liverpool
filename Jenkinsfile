@@ -2,9 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('build') {
             steps {
-                echo 'Hello amit5'
+                echo 'build'
+                sh 'ls'
+            }
+        }
+        stage('stg') {
+            steps {
+                echo 'Hello stg'
+                sh 'ls -l'
+            }
+        }
+        stage('deploy') {
+            steps {
+                echo 'Hello deploy'
+                sh 'll'
             }
         }
     }
