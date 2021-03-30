@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'#'mysql://root:Aa@127.0.0.1:3306/db'
 db = SQLAlchemy(app)
 
 
@@ -13,20 +13,6 @@ class Player(db.Model):
 
     def __repr__(self):
         return f"Player('{self.fullname}, '{self.rank}, {self.id})"
-
-
-posts = [
-    {
-        'name': 'Stevie G',
-        'id': 1,
-        'rank': 10
-    },
-    {
-        'name': 'sir Kenny Dalglish',
-        'id': 2,
-        'rank': 10
-    }
-]
 
 
 @app.route('/')
@@ -52,4 +38,4 @@ def add():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
