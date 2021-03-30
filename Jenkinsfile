@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo 'build ${env.BUILD_ID}'
-                // sh 'docker build -t almogtsarfati/liverpool:v${env.BUILD_ID}'
+                echo "build ${env.BUILD_ID}"
+                // sh "docker build -t almogtsarfati/liverpool:v${env.BUILD_ID}"
                 // build new docker img from docker file 
             }
         }
