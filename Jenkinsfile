@@ -17,7 +17,6 @@ pipeline {
         stage('deploy') {
             steps {
                 echo 'Hello deploy'
-                sh 'll'
             }
         }
     }
