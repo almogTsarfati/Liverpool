@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'#'mysql://root:Aa@127.0.0.1:3306/db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db' #'mysql://root:Aa@127.0.0.1:3306/db'
 db = SQLAlchemy(app)
 
 
