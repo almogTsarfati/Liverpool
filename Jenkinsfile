@@ -5,13 +5,13 @@ pipeline {
         stage('build') {
             steps {
                 // echo "build ${env.BUILD_ID}"
-                sh "sudo docker build -t almogtsarfati/liverpoolimg:v${env.BUILD_ID}"
+                sh "docker build -t almogtsarfati/liverpoolimg:v${env.BUILD_ID}"
                 // build new docker img from docker file 
             }
         }
         stage('stg') {
             steps {
-                sh "sudo docker run --name test -p 5000:5000 -dit almogtsarfati/liverpoolimg:v${env.BUILD_ID}"
+                sh "docker run --name test -p 5000:5000 -dit almogtsarfati/liverpoolimg:v${env.BUILD_ID}"
                 sh "curl localhost:5000"
                 // deploy on staging namespace
                 // run tests
