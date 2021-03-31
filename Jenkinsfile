@@ -3,14 +3,14 @@ pipeline {
 
         stages {
             stage('build') {
-                node("node1") {
+                steps {
                     // echo "build ${env.BUILD_ID}"
                     sh "docker build -t almogtsarfati/liverpoolimg:v${env.BUILD_ID}"
                     // build new docker img from docker file 
                 }
             }
             stage('stg') {
-                node("node1") {
+                steps {
                     sh "docker run --name test -p 5000:5000 -dit almogtsarfati/liverpoolimg:v${env.BUILD_ID}"
                     sh "curl localhost:5000"
                     // deploy on staging namespace
@@ -18,7 +18,7 @@ pipeline {
                 }
             }
             stage('deploy') {
-                node("node1") {
+                steps {
                     echo 'Hello deploy'
                     // deploy on prod namespace
                 }
