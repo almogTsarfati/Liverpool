@@ -5,7 +5,8 @@ pipeline {
             stage('build') {
                 steps {
                     node("node1"){
-                        // echo "build ${env.BUILD_ID}"
+                        echo "build ${env.NODE_NAME}"
+                        sh 'ls -l'
                         sh "docker build -t almogtsarfati/liverpoolimg:v${env.BUILD_ID} ."
                         // build new docker img from docker file 
                     }
