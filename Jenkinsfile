@@ -23,7 +23,7 @@ pipeline {
                         echo 'Hello deploy'
                         // deploy on prod namespace
                     }
+                }
             }
         }
-    }
 }
