@@ -4,9 +4,11 @@ pipeline {
         stages {
             stage('build') {
                 steps {
-                    // echo "build ${env.BUILD_ID}"
-                    sh "docker build -t almogtsarfati/liverpoolimg:v${env.BUILD_ID}"
-                    // build new docker img from docker file 
+                    node("node1"){
+                        // echo "build ${env.BUILD_ID}"
+                        sh "docker build -t almogtsarfati/liverpoolimg:v${env.BUILD_ID}"
+                        // build new docker img from docker file 
+                    }
                 }
             }
             stage('stg') {
