@@ -14,7 +14,7 @@ pipeline {
             }
             stage('stg') {
                 steps {
-                    sh "docker run --name test -p 5000:5000 -dit almogtsarfati/liverpoolimg:v${env.BUILD_ID}"
+                    sh "docker run --name test -p 5000:5000 -dit liverpoolimg"
                     sh "curl localhost:5000"
                     // deploy on staging namespace
                     // run tests
