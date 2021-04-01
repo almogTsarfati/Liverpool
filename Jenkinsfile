@@ -16,6 +16,7 @@ pipeline {
             stage('stg') {
                 steps {
                     node("node1"){
+                        sh "docker rm -f test"
                         sh "docker run --name test -p 5000:5000 -dit almogtsarfati/liverpoolimg:v${env.BUILD_ID}"
                         // sh "curl localhost:5000"
                         // sh "docker tag testimg almogtsarfati/liverpoolimg:v${env.BUILD_ID}"
