@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: liverpool-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    alb.ingress.kubernetes.io/scheme: internet-facing
 spec:
   rules:
   - http:
