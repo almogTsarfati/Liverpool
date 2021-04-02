@@ -13,7 +13,7 @@ node("node1"){
     }
     stage('stg') {
         sh "aws eks update-kubeconfig --name almogo --region eu-central-1"
-        sh "kbuectl get pods"
+        sh "kubectl get pods"
         // sh "docker rm -f test"
         // sh "docker run --name test -p 5000:5000 -dit almogtsarfati/liverpoolimg:v${env.BUILD_ID}"
         // sh "curl localhost:5000"
