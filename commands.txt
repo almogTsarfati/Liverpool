@@ -1,0 +1,11 @@
+in order to connect to an existing cluster from an unstance, you need to configure IAM role, run this command:0
+aws eks update-kubeconfig --name almogo --region eu-central-1
+kubectl config get-contexts
+it will show the list of clusters, but in order to have permissions to access kubectl resources, you need to edit the aws-auth configmap
+if its an instance' you neeed to update the mapRoles:
+    - groups:
+      - system:masters
+      rolearn: arn:aws:iam::055618680309:role/ec2-role
+      username: ec2-role
+if its a user you need to update the mapUser
+kubectl edit cm aws-auth -n kube-system
