@@ -18,6 +18,6 @@ node("node1"){
         sh "helm uninstall liverpool --namespace k8s-stg-ns"
     }
     stage('deploy') {
-        sh "helm install liverpool liverpool-chart/ --namespace k8s-prod-ns --set image=almogtsarfati/liverpoolimg:v${env.BUILD_ID}"
+        sh "helm upgrade liverpool liverpool-chart/ --namespace k8s-prod-ns --set image=almogtsarfati/liverpoolimg:v${env.BUILD_ID}"
     }
 }
