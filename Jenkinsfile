@@ -14,6 +14,7 @@ node("node1"){
     stage('stg') {
         sh "aws eks update-kubeconfig --name almogo --region eu-central-1"
         sh "helm install liverpool liverpool-chart/ --namespace k8s-stg-ns --set image=almogtsarfati/liverpoolimg:v${env.BUILD_ID}"
+        sleep 5
         sh "helm uninstall liverpool --namespace helm-stg-ns"
     }
     stage('deploy') {
