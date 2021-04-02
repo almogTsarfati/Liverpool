@@ -1,4 +1,4 @@
 FROM python
 COPY . /Liverpool
-RUN pip install flask && pip install flask-sqlalchemy
+RUN pip install -r req.txt
 CMD python /Liverpool/app.py
