@@ -4,6 +4,7 @@ metadata:
   name: liverpool-service
   # namespace: {{ .Values.namespace }}
 spec:
+  type: NodePort
   selector:
     app: liverpool
   ports:
