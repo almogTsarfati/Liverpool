@@ -1,0 +1,2 @@
+image: almogtsarfati/liverpoolimg:v17
+namespace: helm-stg-ns

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: liverpool-service
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    app: liverpool
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000

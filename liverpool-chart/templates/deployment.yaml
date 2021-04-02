@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: liverpool-deployment
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: liverpool
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: liverpool
+  template:
+    metadata:
+      labels:
+        app: liverpool
+    spec:
+      containers:
+      - name: liverpool
+        image: {{ .Values.image }}
+        ports:
+        - containerPort: 5000
