@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: liverpool-ingress
   annotations:
+    kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
 spec:
   rules:
