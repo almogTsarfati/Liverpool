@@ -1,4 +1,6 @@
 node("node1"){
+    checkout SCM
+    
     stage('build') {
         echo "build ${env.NODE_NAME}!"
         sh 'ls -l'
