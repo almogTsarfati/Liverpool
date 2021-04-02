@@ -1,4 +1,5 @@
 FROM python
-COPY . /Liverpool
+WORKDIR /Liverpool
+COPY . .
 RUN pip install -r req.txt
 CMD python /Liverpool/app.py
