@@ -3,7 +3,7 @@ node("node1"){
     checkout scm
 
     stage('build') {
-        echo "build ${env.NODE_NAME}!"
+        echo "build ${env.NODE_NAME}"
         sh 'ls -l'
         sh "docker build -t almogtsarfati/liverpoolimg:v${env.BUILD_ID} ."
         withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
